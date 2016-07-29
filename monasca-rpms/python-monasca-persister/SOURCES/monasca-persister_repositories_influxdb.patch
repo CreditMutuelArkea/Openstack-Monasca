@@ -1,0 +1,40 @@
+diff -r -u monasca-persister-0.1.15-orig/monasca_persister/repositories/influxdb/abstract_repository.py monasca-persister-0.1.15/monasca_persister/repositories/influxdb/abstract_repository.py
+--- monasca-persister-0.1.15-orig/monasca_persister/repositories/influxdb/abstract_repository.py	2016-03-25 12:54:38.000000000 +0000
++++ monasca-persister-0.1.15/monasca_persister/repositories/influxdb/abstract_repository.py	2016-07-26 07:13:40.782567294 +0000
+@@ -17,7 +17,7 @@
+ from oslo_config import cfg
+ import six
+ 
+-from repositories.abstract_repository import AbstractRepository
++from monasca_persister.repositories.abstract_repository import AbstractRepository
+ 
+ 
+ @six.add_metaclass(abc.ABCMeta)
+diff -r -u monasca-persister-0.1.15-orig/monasca_persister/repositories/influxdb/alarm_state_history_repository.py monasca-persister-0.1.15/monasca_persister/repositories/influxdb/alarm_state_history_repository.py
+--- monasca-persister-0.1.15-orig/monasca_persister/repositories/influxdb/alarm_state_history_repository.py	2016-03-25 12:54:38.000000000 +0000
++++ monasca-persister-0.1.15/monasca_persister/repositories/influxdb/alarm_state_history_repository.py	2016-07-26 07:14:28.662568911 +0000
+@@ -18,8 +18,8 @@
+ from oslo_log import log
+ import pytz
+ 
+-from repositories.influxdb.abstract_repository import AbstractInfluxdbRepository
+-from repositories.utils import parse_alarm_state_hist_message
++from monasca_persister.repositories.influxdb.abstract_repository import AbstractInfluxdbRepository
++from monasca_persister.repositories.utils import parse_alarm_state_hist_message
+ 
+ LOG = log.getLogger(__name__)
+ 
+diff -r -u monasca-persister-0.1.15-orig/monasca_persister/repositories/influxdb/metrics_repository.py monasca-persister-0.1.15/monasca_persister/repositories/influxdb/metrics_repository.py
+--- monasca-persister-0.1.15-orig/monasca_persister/repositories/influxdb/metrics_repository.py	2016-03-25 12:54:38.000000000 +0000
++++ monasca-persister-0.1.15/monasca_persister/repositories/influxdb/metrics_repository.py	2016-07-26 07:14:44.414569443 +0000
+@@ -18,8 +18,8 @@
+ from oslo_log import log
+ import pytz
+ 
+-from repositories.influxdb.abstract_repository import AbstractInfluxdbRepository
+-from repositories.utils import parse_measurement_message
++from monasca_persister.repositories.influxdb.abstract_repository import AbstractInfluxdbRepository
++from monasca_persister.repositories.utils import parse_measurement_message
+ 
+ LOG = log.getLogger(__name__)
+ 

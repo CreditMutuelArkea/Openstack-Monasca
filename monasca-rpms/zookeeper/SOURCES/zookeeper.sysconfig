@@ -1,0 +1,3 @@
+ZOO_LOG_DIR=/var/log/zookeeper
+ZOOCFGDIR=/opt/zookeeper/conf
+JMXLOCALONLY=false

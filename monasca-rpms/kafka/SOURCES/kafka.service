@@ -1,0 +1,19 @@
+[Unit]
+Description=Kafka Daemon
+After=zookeeper.service
+
+[Service]
+Type=simple
+User=kafka
+Group=kafka
+Restart=on-failure
+LimitNOFILE=32768
+Environment="JAVA_HOME=/opt/java8"
+Environment="KAFKA_HEAP_OPTS=-Xmx1G -Xms1G"
+Environment="KAFKA_OPTS=-XX:GCLogFileSize=50M -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=5"
+ExecStart=/opt/kafka/bin/kafka-server-start.sh /opt/kafka/config/server.properties
+ExecStop=/opt/kafka/bin/kafka-server-stop.sh
+
+[Install]
+WantedBy=multi-user.target
+
