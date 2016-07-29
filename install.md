@@ -3,7 +3,7 @@
 Steps :
 
 | Name of the component | Version |
-| -- | -- |
+| ------------- | ------------- |
 | Install and configure ZooKeeper | 3.4.8 |
 | Install and configure Kafka | 0.9.0.1 |
 | Install and configure InfluxDB | 0.10.3-1 |
