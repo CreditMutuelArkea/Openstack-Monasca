@@ -1,3 +1,7 @@
+* [Introduction](README.md)
+* [Installation](install.md)
+* [Setup](setup.md)
+
 # Introduction
 
 
