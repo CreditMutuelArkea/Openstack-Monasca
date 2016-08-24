@@ -17,7 +17,7 @@ BuildArch: 	noarch
 Source0:	%{name}_%{scala_version}-%{version}.tgz
 Source1:	%{name}.service
 
-Requires:	ArkeaOracleJDK8
+Requires:	jdk-8u101-linux-x64
 
 Requires(pre): 	shadow-utils
 Requires: 	systemd

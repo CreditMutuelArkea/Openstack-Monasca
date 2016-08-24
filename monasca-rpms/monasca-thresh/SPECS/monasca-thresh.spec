@@ -18,7 +18,7 @@ Source0:          http://tarballs.openstack.org/ci/monasca-thresh/monasca-thresh
 Source1:          thresh-config.yml
 Source2:          monasca-thresh.service
 
-Requires:         ArkeaOracleJDK8
+Requires:         jdk-8u101-linux-x64
 
 Requires(post):   systemd
 Requires(preun):  systemd

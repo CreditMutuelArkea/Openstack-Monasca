@@ -19,7 +19,7 @@ Source0:          http://apache.mirrors.ovh.net/ftp.apache.org/dist/%{name}/%{na
 Source1:          %{name}.service
 Source2:          %{name}.sysconfig
 
-Requires:         ArkeaOracleJDK8
+Requires:         jdk-8u101-linux-x64
 
 Requires(pre):    shadow-utils
 Requires:         systemd
