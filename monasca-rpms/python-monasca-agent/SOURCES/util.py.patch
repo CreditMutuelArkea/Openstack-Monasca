@@ -1,0 +1,10 @@
+--- monasca-agent-1.1.23/monasca_agent/common/util.py	2016-04-07 10:46:18.396663981 +0200
++++ monasca-agent-1.1.23/monasca_agent/common/util_copie.py	2016-04-07 11:14:23.053592040 +0200
+@@ -19,6 +19,7 @@
+ import uuid
+ 
+ import logging
++import logging.handlers
+ log = logging.getLogger(__name__)
+ 
+ 

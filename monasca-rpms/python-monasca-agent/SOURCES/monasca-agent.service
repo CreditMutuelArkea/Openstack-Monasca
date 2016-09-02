@@ -1,0 +1,14 @@
+[Unit]
+Description=Monasca Agent
+
+[Service]
+Type=simple
+User=mon-agent
+Group=monasca
+Restart=on-failure
+PermissionsStartOnly=true
+ExecStartPre=-/usr/bin/mkdir /var/run/monasca
+ExecStart=/usr/bin/supervisord -c /etc/monasca/agent/supervisor.conf -n
+
+[Install]
+WantedBy=multi-user.target

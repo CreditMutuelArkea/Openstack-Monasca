@@ -1,0 +1,25 @@
+From: Laszlo Hegedus <laszlo.hegedus@ericsson.com>
+Date: Mon, 18 Jul 2016 09:29:45 +0000 (+0200)
+Subject: Fix setup.cfg console_scripts
+X-Git-Url: https://review.openstack.org/gitweb?p=openstack%2Fmonasca-persister.git;a=commitdiff_plain;h=1940f924d17286349d8d91c67d1452575dc0407b
+
+Fix setup.cfg console_scripts
+
+monasca_persister.servicerunner no longer exists, it has ben replaced
+by monasca_persister.persister.
+
+Change-Id: Iac72acb0c355e8306fdf07ba645918beac78bd1e
+Closes-Bug: #1603915
+---
+diff -u monasca-persister-0.1.15-orig/setup.cfg monasca-persister-0.1.15/setup.cfg
+--- monasca-persister-0.1.15-orig/setup.cfg	2016-03-25 12:56:04.000000000 +0000
++++ monasca-persister-0.1.15/setup.cfg	2016-07-26 06:46:53.110513000 +0000
+@@ -13,7 +13,7 @@
+ 
+ [entry_points]
+ console_scripts = 
+-	monasca-persister = monasca_persister.servicerunner:main
++    monasca-persister = monasca_persister.persister:main
+ 
+ [files]
+ packages = monasca_persister

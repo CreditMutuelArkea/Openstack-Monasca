@@ -1,0 +1,15 @@
+[Unit]
+Description=Monasca Api
+Requires=network.target
+After=network.target kafka.service influxdb.service mysql.service
+
+[Service]
+Type=simple
+User=mon-api
+Group=monasca
+LimitNOFILE=32768
+Restart=on-failure
+ExecStart=/usr/bin/gunicorn -k eventlet --worker-connections=2000 --backlog=1000 --paste /etc/monasca/api-config.ini
+
+[Install]
+WantedBy=multi-user.target

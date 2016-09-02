@@ -1,0 +1,19 @@
+[Unit]
+Description=Storm Nimbus
+After=zookeeper.service
+
+[Service]
+Type=simple
+User=storm
+Group=storm
+Restart=on-failure
+WorkingDirectory=/opt/storm
+#ExecStart=/opt/storm/bin/storm --config /opt/storm/conf/storm.yaml nimbus
+ExecStart=/opt/storm/bin/storm nimbus
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=storm-nimbus
+SyslogFacility=local7
+
+[Install]
+WantedBy=multi-user.target

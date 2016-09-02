@@ -1,0 +1,21 @@
+[Unit]
+After=nimbus.target systemd-journald.socket basic.target system.slice zookeeper.service
+Requires=basic.target
+Description=LSB: Monitoring threshold engine running under storm
+Conflicts=shutdown.target
+Before=shutdown.target multi-user.target graphical.target
+
+[Service]
+Type=simple
+User=mon-thresh
+Group=monasca
+Restart=always
+RestartSec=10
+TimeoutSec=5min
+GuessMainPID=no
+RemainAfterExit=yes
+ExecStart=/opt/storm/bin/storm jar /etc/monasca/monasca-thresh.jar monasca.thresh.ThresholdingEngine /etc/monasca/thresh-config.yml thresh-cluster
+ExecStop=/opt/storm/bin/storm kill thresh-cluster
+
+[Install]
+WantedBy=multi-user.target graphical.target

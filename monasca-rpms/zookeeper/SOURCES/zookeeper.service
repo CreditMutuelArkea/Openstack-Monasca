@@ -1,0 +1,20 @@
+[Unit]
+Description=Apache ZooKeeper
+After=network.target
+ConditionPathExists=/opt/zookeeper/conf/zoo.cfg
+ConditionPathExists=/opt/zookeeper/conf/log4j.properties
+
+[Service]
+Type=forking
+User=zk
+Group=zk
+SyslogIdentifier=zookeeper
+UMask=0027
+EnvironmentFile=-/etc/sysconfig/zookeeper
+ExecStart=/opt/zookeeper/bin/zkServer.sh start
+ExecStop=/opt/zookeeper/bin/zkServer.sh stop
+ExecReload=/opt/zookeeper/bin/zkServer.sh restart
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
